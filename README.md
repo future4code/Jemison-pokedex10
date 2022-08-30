@@ -1,7 +1,7 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
+Guilherme Maciosek
 - Pessoa 2
 - Pessoa 3
 
