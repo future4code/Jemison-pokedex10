@@ -3,7 +3,7 @@
 Nome dos integrantes: 
 
 - Guilherme Maciosek
-- Pessoa 2
+- Rafael Lopes
 - Pessoa 3
 
 Link do Surge: www.link.com.br
