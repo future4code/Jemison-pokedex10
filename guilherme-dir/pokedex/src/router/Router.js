@@ -7,9 +7,9 @@ export function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="home" index element={<Home />} />
-        <Route path="pokedex" index element={<Pokedex />} />
+        <Route path="/" index element={<Home />} />
+        <Route path="pokedex" element={<Pokedex />} />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
