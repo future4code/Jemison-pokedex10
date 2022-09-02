@@ -23,7 +23,7 @@ function Home() {
       </HomeHeader>
       {pokemons.map((pokemon) => (
         <div key={pokemon.id}>
-          <span>{pokemon.name}</span>
+          <span>{pokemon.name}</span>   
         </div>
       ))}
     </div>
