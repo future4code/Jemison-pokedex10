@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { BASE_URL } from "../constants/url";
+import { BASE_URL } from "../../constants/url";
+import { HomeHeader } from "./styles";
 
 function Home() {
   const [pokemons, setPokemons] = useState([]);
@@ -16,14 +17,17 @@ function Home() {
 
   return (
     <div>
-      <h1> Home Page PokedeX </h1>
+      <HomeHeader>
+        <button>Ver minha Pokedex</button>
+        <h1> Home Page PokedeX </h1>
+      </HomeHeader>
       {pokemons.map((pokemon) => (
         <div key={pokemon.id}>
           <span>{pokemon.name}</span>
         </div>
       ))}
     </div>
-  );
+  )
 }
 
 export default Home;

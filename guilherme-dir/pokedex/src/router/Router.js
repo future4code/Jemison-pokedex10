@@ -1,15 +1,15 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
-import Pokedex from "../pages/Pokedex";
+import Home from "../pages/Home/Home";
+import Pokedex from "../pages/Pokedex/Pokedex";
 
 export function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="home" index element={<Home />} />
-        <Route path="pokedex" index element={<Pokedex />} />
+        <Route path="/" index element={<Home />} />
+        <Route path="pokedex" element={<Pokedex />} />
       </Routes>
     </BrowserRouter>
-  );
+  )
 }
