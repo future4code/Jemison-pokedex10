@@ -14,3 +14,11 @@ h1{
     margin: 20px auto;
 }
 `
+
+export const PokeCardName = styled.span`
+display: flex;
+border: solid grey 1px;
+border-radius: 7px;
+margin: 10px;
+padding: 6px;;
+`

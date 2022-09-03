@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../constants/url";
-import { HomeHeader } from "./styles";
+import { HomeHeader, PokeCardName } from "./styles";
 
 function Home() {
   const [pokemons, setPokemons] = useState([]);
@@ -23,7 +23,7 @@ function Home() {
       </HomeHeader>
       {pokemons.map((pokemon) => (
         <div key={pokemon.id}>
-          <span>{pokemon.name}</span>   
+          <PokeCardName>{pokemon.name}</PokeCardName>   
         </div>
       ))}
     </div>
