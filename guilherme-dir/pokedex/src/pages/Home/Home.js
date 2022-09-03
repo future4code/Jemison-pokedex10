@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../constants/url";
 import { HomeHeader, PokeCardName } from "./styles";
+import { goToPokedex } from '../../router/coordinator';
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [pokemons, setPokemons] = useState([]);
+
+  const navigate = useNavigate();
 
   axios
     .get(BASE_URL)
@@ -18,13 +22,15 @@ function Home() {
   return (
     <div>
       <HomeHeader>
-        <button>Ver minha Pokedex</button>
+        <button onClick={() => goToPokedex(navigate)}>Ver minha POKEDEX</button>
         <h1> Home Page PokedeX </h1>
       </HomeHeader>
       {pokemons.map((pokemon) => (
-        <div key={pokemon.id}>
-          <PokeCardName>{pokemon.name}</PokeCardName>   
-        </div>
+        <PokeCardName key={pokemon.id}>
+          {pokemon.name}
+          <button>Adicionar</button>
+          <button>Detalhes</button>
+        </PokeCardName>
       ))}
     </div>
   )

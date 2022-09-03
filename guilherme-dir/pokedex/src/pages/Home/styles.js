@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const HomeHeader = styled.header`
 border: solid grey 1px;
 display: flex;
+width: 100vw;
 
 button{
     height: 5vh;
@@ -16,9 +17,15 @@ h1{
 `
 
 export const PokeCardName = styled.span`
-display: flex;
+display:flex;
 border: solid grey 1px;
 border-radius: 7px;
-margin: 10px;
-padding: 6px;;
+margin: 10px auto;
+padding: 6px;
+width:50vw;
+
+
+button{
+    margin: 3px;
+}
 `
