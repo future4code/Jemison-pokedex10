@@ -1,8 +1,19 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { goToHomePage } from '../../router/coordinator';
+import { PokedexHeader } from './styles';
 
-function Pokedex () {
+
+function Pokedex() {
+
+    const navigate = useNavigate();
+    
     return (
-        <h1>Pokedex</h1>
+        <PokedexHeader>
+            <button onClick={() => goToHomePage(navigate)}>Voltar para a Home</button>
+            <h1>Pokedex</h1>
+        </PokedexHeader>
+
     )
 }
 

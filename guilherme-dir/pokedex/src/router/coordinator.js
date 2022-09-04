@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom";
 
-export const goToHomePage = useNavigate("/home")
+export const goToHomePage = (navigate) => { navigate("/") }
 
-export const goToPokedex = useNavigate("/pokedex")
+export const goToPokedex = (navigate) => { navigate("/pokedex") }
+

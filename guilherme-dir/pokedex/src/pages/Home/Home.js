@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { BASE_URL } from "../../constants/url";
-import { HomeHeader } from "./styles";
+import { HomeHeader, PokeCardName } from "./styles";
+import { goToPokedex } from '../../router/coordinator';
+import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [pokemons, setPokemons] = useState([]);
+
+  const navigate = useNavigate();
 
   axios
     .get(BASE_URL)
@@ -15,16 +19,25 @@ function Home() {
       console.log(error);
     });
 
+  const addToPokedex = (pokemon) => {
+const selectedPokemons = [...pokemons, pokemon]
+setPokemons(selectedPokemons)
+console.log(pokemon);
+  }
+
   return (
     <div>
       <HomeHeader>
-        <button>Ver minha Pokedex</button>
+        <button onClick={() => goToPokedex(navigate)}>Ver minha POKEDEX</button>
         <h1> Home Page PokedeX </h1>
       </HomeHeader>
       {pokemons.map((pokemon) => (
-        <div key={pokemon.id}>
-          <span>{pokemon.name}</span>
-        </div>
+        <PokeCardName key={pokemon.id} pokemon={pokemon} addToPokedex={addToPokedex}>
+          {pokemon.name}
+
+          <button onClick={() => addToPokedex(pokemon)} >Adicionar</button>
+          <button>Detalhes</button>
+        </PokeCardName>
       ))}
     </div>
   )
