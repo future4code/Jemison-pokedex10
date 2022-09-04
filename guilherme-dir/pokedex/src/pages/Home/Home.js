@@ -5,7 +5,7 @@ import { HomeHeader, PokeCardName } from "./styles";
 import { goToPokedex } from '../../router/coordinator';
 import { useNavigate } from "react-router-dom";
 
-function Home() {
+function Home({ pokemon }) {
   const [pokemons, setPokemons] = useState([]);
 
   const navigate = useNavigate();
@@ -19,6 +19,11 @@ function Home() {
       console.log(error);
     });
 
+  const addToPokedex = (event) => {
+
+  }
+
+
   return (
     <div>
       <HomeHeader>
@@ -28,7 +33,8 @@ function Home() {
       {pokemons.map((pokemon) => (
         <PokeCardName key={pokemon.id}>
           {pokemon.name}
-          <button>Adicionar</button>
+
+          <button onClick={() => addToPokedex(pokemon)} >Adicionar</button>
           <button>Detalhes</button>
         </PokeCardName>
       ))}
