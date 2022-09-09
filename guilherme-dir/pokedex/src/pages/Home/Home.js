@@ -3,6 +3,7 @@ import axios from "axios";
 import { BASE_URL } from "../../constants/url";
 import { HomeHeader, PokeCardName } from "./styles";
 import { goToPokedex } from '../../router/coordinator';
+import { goToDetailsPage } from "../../router/coordinator";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
@@ -20,9 +21,9 @@ function Home() {
     });
 
   const addToPokedex = (pokemon) => {
-const selectedPokemons = [...pokemons, pokemon]
-setPokemons(selectedPokemons)
-console.log(pokemon);
+    const selectedPokemons = [...pokemons, pokemon]
+    setPokemons(selectedPokemons)
+    console.log(pokemon);
   }
 
   return (
@@ -36,7 +37,7 @@ console.log(pokemon);
           {pokemon.name}
 
           <button onClick={() => addToPokedex(pokemon)} >Adicionar</button>
-          <button>Detalhes</button>
+          <button onClick={() => goToDetailsPage(navigate)}>Detalhes</button>
         </PokeCardName>
       ))}
     </div>
