@@ -7,8 +7,7 @@ import { BASE_URL } from "../constants/url";
 function GlobalState(props) {
   const [pokemons, setPokemons] = useState([]);
   const [pokemonsInPokedex, setPokemonsInPodekex] = useState([]);
-
-
+  
   const displayPokemons = axios
     .get(BASE_URL)
     .then((response) => {

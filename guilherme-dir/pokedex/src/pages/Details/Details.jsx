@@ -9,21 +9,21 @@ function Details () {
     const [pokeID, setPokeID] = useState({})
  
 
-    const pokemonDetails = (name) => {
-        axios
-            .get(`${BASE_URL}/${name}`)
-            .then((response)=>{
-                setPokeID(response.data)
-        })
-            .catch((error)=>{
-                console.log(error)
-            })
-    }
+    // const pokemonDetails = (name) => {
+    //     axios
+    //         .get(`${BASE_URL}/${name}`)
+    //         .then((response)=>{
+    //             setPokeID(response.data)
+    //     })
+    //         .catch((error)=>{
+    //             console.log(error)
+    //         })
+    // }
 
     useEffect(() => {
         const actualId = new URLSearchParams(search).get("name");
         console.log(actualId)
-        pokemonDetails(actualId)
+        // pokemonDetails(actualId)
     }, [])
 
 
