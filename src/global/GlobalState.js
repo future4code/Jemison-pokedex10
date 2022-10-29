@@ -22,7 +22,11 @@ function GlobalState(props) {
                 .then((response) => {
                     newList.push(response.data)
                     if (newList.length === 20) {
-                        setPokemons(newList)
+                        // Para ordenar os pokemons por id (ordem dos números na API)
+                        const orderedList = newList.sort((a, b) => {
+                            return a.id - b.id
+                        })
+                        setPokemons(orderedList)
                     }
                 })
                 .catch((error) => console.log(error.message))
@@ -35,7 +39,7 @@ function GlobalState(props) {
             .catch((error) => console.log(error.message))
     }
 
-    const data= {
+    const data = {
         pokemons, setPokemons, pokedex, setPokedex
     }
     return (

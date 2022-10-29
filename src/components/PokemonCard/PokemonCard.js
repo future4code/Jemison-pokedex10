@@ -1,7 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import { ButtonsContainer, ImgContainer, PokeCardContainer, PokeImg } from '../PokemonCard/styled';
+import { goToPokemonDetail } from '../../routes/coordinator';
+
 
 function PokemonCard({ pokemon }) {
+
+    const navigate = useNavigate();
+
 
     return (
         <div>
@@ -14,7 +20,7 @@ function PokemonCard({ pokemon }) {
                 </ImgContainer>
                 <ButtonsContainer>
                     <button>Adicionar a Pokédex</button>
-                    <button>Ver detalhes</button>
+                    <button onClick={() => goToPokemonDetail(navigate, pokemon.name)}>Ver detalhes</button>
                 </ButtonsContainer>
             </PokeCardContainer>
         </div>
