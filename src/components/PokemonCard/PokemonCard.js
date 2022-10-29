@@ -27,7 +27,7 @@ function PokemonCard({ pokemon, isPokedex }) {
     };
 
     const removeFromPokedex = () => {
-        const pokeIndex = pokemons.findIndex((item) => item.name === pokemon.name)
+        const pokeIndex = pokedex.findIndex((item) => item.name === pokemon.name)
         const newPokedexList = [...pokedex]
         newPokedexList.splice(pokeIndex, 1);
 
