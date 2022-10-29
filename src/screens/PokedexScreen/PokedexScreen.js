@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import { goToPokemonList } from '../../routes/coordinator';
+import { PokeListContainer } from './styled';
 
 function PokedexScreen() {
 
@@ -12,6 +13,9 @@ function PokedexScreen() {
         title={"Pokedex"}
         leftButtonFunction={() => goToPokemonList(navigate)}
       />
+      <PokeListContainer>
+        {}
+      </PokeListContainer>
     </>
   )
 }
