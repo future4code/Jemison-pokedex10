@@ -4,7 +4,7 @@ import { ButtonsContainer, ImgContainer, PokeCardContainer, PokeImg } from '../P
 import { goToPokemonDetail } from '../../routes/coordinator';
 
 
-function PokemonCard({ pokemon }) {
+function PokemonCard({ pokemon, isPokedex }) {
 
     const navigate = useNavigate();
 
@@ -19,7 +19,9 @@ function PokemonCard({ pokemon }) {
                     />
                 </ImgContainer>
                 <ButtonsContainer>
-                    <button>Adicionar a Pokédex</button>
+                    <button>
+                        {isPokedex ? "Remover da Pokedex" : "Adicionar à Pokedex"}
+                    </button>
                     <button onClick={() => goToPokemonDetail(navigate, pokemon.name)}>Ver detalhes</button>
                 </ButtonsContainer>
             </PokeCardContainer>
