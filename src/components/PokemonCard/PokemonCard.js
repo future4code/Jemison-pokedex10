@@ -16,20 +16,28 @@ function PokemonCard({ pokemon, isPokedex }) {
         const pokeIndex = pokemons.findIndex((item) => item.name === pokemon.name)
         const newPokemonsList = [...pokemons]
         newPokemonsList.splice(pokeIndex, 1)
-        const newPokedexList = [...pokedex, pokemon]
+        const orderedPokemons = newPokemonsList.sort((a, b) => { return a.id - b.id });
 
-        setPokedex(newPokedexList);
-        setPokemons(newPokemonsList)
+        const newPokedexList = [...pokedex, pokemon]
+        // Para o pokemon excluído da pokedex retornar à lista de pokemons por ordem do seu index
+        const orderedPokedex = newPokedexList.sort((a, b) => { return a.id - b.id })
+
+        setPokedex(orderedPokedex);
+        setPokemons(orderedPokemons)
     };
 
     const removeFromPokedex = () => {
         const pokeIndex = pokemons.findIndex((item) => item.name === pokemon.name)
         const newPokedexList = [...pokedex]
-        newPokedexList.splice(pokeIndex, 1)
-        const newPokemonsList = [...pokemons, pokemon]
+        newPokedexList.splice(pokeIndex, 1);
 
-        setPokedex(newPokedexList);
-        setPokemons(newPokemonsList)
+        const orderedPokedex = newPokedexList.sort((a, b) => { return a.id - b.id });
+
+        const newPokemonsList = [...pokemons, pokemon]
+        const orderedPokemons = newPokemonsList.sort((a, b) => { return a.id - b.id })
+
+        setPokedex(orderedPokedex);
+        setPokemons(orderedPokemons)
     }
 
     return (
