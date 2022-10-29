@@ -11,7 +11,11 @@ function PokemonListScreen() {
     <div>
       <Header />
       <PokeListContainer>
-        <PokemonCard />
+        {
+          pokemons.map((pokemon) => {
+            return <PokemonCard key={pokemon.name} pokemon={pokemon} />
+          })
+        }
       </PokeListContainer>
     </div>
   )
