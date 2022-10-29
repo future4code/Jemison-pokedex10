@@ -49,7 +49,11 @@ function PokemonDetailScreen() {
           </TypesContainer>
           <MovesContainer>
             <TitleContainer>Principais Ataques</TitleContainer>
-            { }
+            {selectedPokemon && selectedPokemon.moves.map((move, index) => {
+              return (
+                index < 5 && <p key={move.move.name}>{move.move.name}</p>
+              )
+            })}
           </MovesContainer>
         </TypeAndMovesContainer>
       </PokeInfosContainer>
