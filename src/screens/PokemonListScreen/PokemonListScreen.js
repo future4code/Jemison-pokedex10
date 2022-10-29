@@ -7,6 +7,8 @@ function PokemonListScreen() {
     <div>
       <Header />
       <PokemonCard />
+      <PokemonCard />
+      <PokemonCard />
     </div>
   )
 }
