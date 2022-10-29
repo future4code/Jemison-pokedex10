@@ -20,7 +20,7 @@ function PokedexScreen() {
       <PokeListContainer>
         {
           pokedex && pokedex.map((item) => {
-            return <PokemonCard key={item.name} pokemon={item} />
+            return <PokemonCard key={item.name} isPokedex pokemon={item} />
           })
         }
       </PokeListContainer>
