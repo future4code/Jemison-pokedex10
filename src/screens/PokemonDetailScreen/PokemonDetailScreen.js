@@ -30,11 +30,22 @@ function PokemonDetailScreen() {
         </ImagesContainer>
         <StatsContainer>
           <TitleContainer>Poderes</TitleContainer>
-          { }
+          {/* Para buscar os poderes do pokemon */}
+          {selectedPokemon && selectedPokemon.stats && selectedPokemon.stats.map((stat) => {
+            return (
+              <p key={stat.stat.name}>
+                <strong>{stat.stat.name}:</strong>
+                {stat.base_stat}
+              </p>
+            )
+          })
+          }
         </StatsContainer>
         <TypeAndMovesContainer>
           <TypesContainer>
-            { }
+            {selectedPokemon && selectedPokemon.types.map((type) => {
+              return <p key={type.type.name}>{type.type.name}</p>
+            })}
           </TypesContainer>
           <MovesContainer>
             <TitleContainer>Principais Ataques</TitleContainer>
