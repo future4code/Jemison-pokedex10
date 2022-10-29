@@ -17,12 +17,19 @@ function PokemonCard({ pokemon, isPokedex }) {
         const newPokemonsList = [...pokemons]
         newPokemonsList.splice(pokeIndex, 1)
         const newPokedexList = [...pokedex, pokemon]
+
         setPokedex(newPokedexList);
         setPokemons(newPokemonsList)
     };
 
     const removeFromPokedex = () => {
+        const pokeIndex = pokemons.findIndex((item) => item.name === pokemon.name)
+        const newPokedexList = [...pokedex]
+        newPokedexList.splice(pokeIndex, 1)
+        const newPokemonsList = [...pokemons, pokemon]
 
+        setPokedex(newPokedexList);
+        setPokemons(newPokemonsList)
     }
 
     return (

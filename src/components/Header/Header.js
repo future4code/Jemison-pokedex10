@@ -5,7 +5,7 @@ import { HeaderContainer, LeftHeaderButton, RightHeaderButton } from './styled';
 import { goToPokedex } from '../../routes/coordinator'
 
 // Recebendo as informações por props
-function Header({ title, leftButtonFunction, showRightButton }) {
+function Header({ leftButtonFunction, title, showRightButton }) {
 
   const navigate = useNavigate()
 
@@ -13,27 +13,25 @@ function Header({ title, leftButtonFunction, showRightButton }) {
     switch (title) {
       case "Lista de Pokemons":
         return "Ir para Pokedex";
-        break;
-      case "Pokedex":
-        return "Lista de pokemons";
-        break;
+      case "Pokédex":
+        return "Voltar para lista de pokémons";
       default:
-        return "Voltar"
-        break;
+        return "Voltar";
     }
   };
 
   return (
-    <HeaderContainer >
+    <HeaderContainer>
       <LeftHeaderButton onClick={leftButtonFunction}>
         {leftButtonTitle()}
       </LeftHeaderButton>
       <h1>{title}</h1>
       {/* Para só mostrar o botão da direita se a condição for verdadeira */}
-      {
-        showRightButton && (
-          <RightHeaderButton onClick={() => goToPokedex(navigate)}>Ir para Pokedex</RightHeaderButton>
-        )}
+      {showRightButton && (
+        <RightHeaderButton onClick={() => goToPokedex(navigate)}>
+          Ir para pokedex
+        </RightHeaderButton>
+      )}
     </HeaderContainer>
   )
 }

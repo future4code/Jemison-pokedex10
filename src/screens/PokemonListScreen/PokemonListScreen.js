@@ -12,15 +12,15 @@ function PokemonListScreen() {
   const navigate = useNavigate()
 
   const { pokemons } = useContext(GlobalStateContext)
-  
+
   return (
     <div>
       <Header
-        title={"Lista De Pokemons"}
-        leftButtonFunction={() => goToPokedex(navigate())}
+        title={"Lista de Pokemons"}
+        leftButtonFunction={() => goToPokedex(navigate)}
       />
       <PokeListContainer>
-        {
+        {pokemons &&
           pokemons.map((pokemon) => {
             return <PokemonCard key={pokemon.name} pokemon={pokemon} />
           })
