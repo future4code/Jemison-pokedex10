@@ -1,10 +1,14 @@
 import React, { useEffect, useContext, useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { GlobalStateContext } from '../../global/GlobalStateContext';
 import Header from '../../components/Header/Header'
 import { ImagesContainer, ImgWrapper, MovesContainer, PokeInfosContainer, StatsContainer, TitleContainer, TypeAndMovesContainer, TypesContainer } from './styled';
+import {goToPokemonList} from '../../routes/coordinator';
+
 
 function PokemonDetailScreen() {
+
+  const navigate = useNavigate()
 
   //Pegar o pokemon por params (nome do poke na url) 
   const { name } = useParams()
@@ -22,7 +26,7 @@ function PokemonDetailScreen() {
 
   return (
     <div>
-      <Header />
+      <Header leftButtonFunction={() => goToPokemonList(navigate)} showRightButton />
       <PokeInfosContainer>
         <ImagesContainer>
           <ImgWrapper src={selectedPokemon && selectedPokemon.sprites.front_default} />
