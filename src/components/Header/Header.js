@@ -15,7 +15,7 @@ function Header({ title, leftButtonFunction, showRightButton }) {
         return "Ir para Pokedex";
         break;
       case "Pokedex":
-        return "Voltar para a lista de pokemons";
+        return "Lista de pokemons";
         break;
       default:
         return "Voltar"

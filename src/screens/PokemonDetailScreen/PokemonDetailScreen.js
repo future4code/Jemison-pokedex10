@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { GlobalStateContext } from '../../global/GlobalStateContext';
 import Header from '../../components/Header/Header'
 import { ImagesContainer, ImgWrapper, MovesContainer, PokeInfosContainer, StatsContainer, TitleContainer, TypeAndMovesContainer, TypesContainer } from './styled';
-import {goToPokemonList} from '../../routes/coordinator';
+import { goToPokemonList } from '../../routes/coordinator';
 
 
 function PokemonDetailScreen() {
@@ -26,7 +26,11 @@ function PokemonDetailScreen() {
 
   return (
     <div>
-      <Header leftButtonFunction={() => goToPokemonList(navigate)} showRightButton />
+      <Header
+        leftButtonFunction={() => goToPokemonList(navigate)}
+        title={"Detalhes do Pokemon"}
+        showRightButton
+      />
       <PokeInfosContainer>
         <ImagesContainer>
           <ImgWrapper src={selectedPokemon && selectedPokemon.sprites.front_default} />
@@ -53,7 +57,7 @@ function PokemonDetailScreen() {
           </TypesContainer>
           <MovesContainer>
             <TitleContainer>Principais Ataques</TitleContainer>
-            {selectedPokemon && selectedPokemon.moves.map((move, index) => {
+            {selectedPokemon && selectedPokemon.moves && selectedPokemon.moves.map((move, index) => {
               return (
                 index < 5 && <p key={move.move.name}>{move.move.name}</p>
               )

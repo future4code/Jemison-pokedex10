@@ -1,8 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Header from '../../components/Header/Header';
+import { goToPokemonList } from '../../routes/coordinator';
 
 function PokedexScreen() {
+
+  const navigate = useNavigate()
   return (
-    <div>PokedexScreen</div>
+    <>
+      <Header
+        title={"Pokedex"}
+        leftButtonFunction={() => goToPokemonList(navigate)}
+      />
+    </>
   )
 }
 
