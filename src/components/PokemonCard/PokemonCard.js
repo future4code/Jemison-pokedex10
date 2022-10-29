@@ -7,6 +7,7 @@ function PokemonCard() {
             <PokeCardContainer>
                 <ImgContainer>
                   
+
                 </ImgContainer>
                 <ButtonsContainer>
                     <button>Adicionar a Pokédex</button>
